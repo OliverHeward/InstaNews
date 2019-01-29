@@ -169,7 +169,7 @@ body {
   font-size: 16px;
   color: #fff; }
 
-.main-area, .flexbox-news, footer {
+.main-area, .main-area .selection h1 label, .flexbox-news, footer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -231,10 +231,10 @@ footer p {
       .main-area .logo {
         width: 150px;
         position: absolute;
-        left: 15px; } }
+        left: 15%; } }
     @media (min-width: 1240px) {
       .main-area .logo {
-        width: 100px;
+        width: 150px;
         position: absolute;
         left: 15px; } }
   .main-area .selection {
@@ -245,16 +245,21 @@ footer p {
         left: 15%; } }
     .main-area .selection h1 {
       margin-top: 20px;
-      text-align: left; }
-    .main-area .selection select.dropdown {
-      background-color: #fff;
-      margin-top: 20px;
-      width: 200px;
-      height: 30px; }
-      .main-area .selection select.dropdown :after {
-        content: "\f063";
-        font-family: FontAwesome; }
+      margin-bottom: 20px; }
+      @media (min-width: 1240px) {
+        .main-area .selection h1 {
+          text-align: left; } }
+      .main-area .selection h1 label {
+        width: 200px; }
+        .main-area .selection h1 label label:before {
+          background: blue; }
+      .main-area .selection h1 select.dropdown {
+        background-color: #fff;
+        margin-top: 20px;
+        width: 175px;
+        height: 30px; }
 
+/* ---------- FLEXBOX NEWS REEL ---------- */
 .flexbox-news {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;

@@ -69,93 +69,98 @@ header {
         @include tablet {
             width: 150px;
             position: absolute;
-            left: 15px;
+            left: 15%;
 
         }
 
         @include desktop {
-            width: 100px;
+            width: 150px;
             position: absolute;
             left: 15px;
         }
     }
 
-        .selection {
-            text-align: center;
 
+    .selection {
+        text-align: center;
+
+        @include desktop {
+            position: absolute;
+            left: 15%;
+        }
+
+        h1 {
+            @extend %bodyfont;
+            @include margintb(20px, 20px);
 
             @include desktop {
-                position: absolute;
-                left: 15%;
-            }
-
-            h1 {
-                @extend %bodyfont;
-                margin-top: 20px;
                 text-align: left;
+            }
+        
+
+            label {
+                @extend %flex-center;
+                width: 200px;
+
+
+                label:before {
+                    background: blue;
+
+                }
             }
 
             select.dropdown {
                 background-color: #fff;
                 margin-top: 20px;
-                @include widthheight(200px, 30px);
+                @include widthheight(175px, 30px);
+            }
+        }
+}
+}
 
-                :after {
-                    content: "\f063";
-                    font-family: FontAwesome;
-                }
 
+
+
+     /* ---------- FLEXBOX NEWS REEL ---------- */
+
+    .flexbox-news {
+        @extend %flex-center;
+        flex-flow: wrap row;
+
+        .holder {
+            @extend %content-holder;
+            @include widthheight(100%, 400px);
+
+            @include tablet {
+                @include widthheight(33.33%, 600px);
+            }
+
+            @include desktop {
+                @include widthheight(25%, 600px);
             }
 
 
+            p {
+                @extend %content-box-text;
+                padding: 15px 10px;
+            }
 
-
-            
         }
-}
+    }
 
+    /* ---------- FOOTER SECTION ---------- */
 
-
-
-//     /* ---------- FLEXBOX NEWS REEL ---------- */
-
-.flexbox-news {
-    @extend %flex-center;
-    flex-flow: wrap row;
-
-    .holder {
-        @extend %content-holder;
-        @include widthheight(100%, 400px);
-
-        @include tablet {
-            @include widthheight(33.33%, 600px);
-        }
-
-        @include desktop {
-            @include widthheight(25%, 600px);
-        }
-
+    footer {
+        @extend %flex-center;
+        height: 100px;
 
         p {
-            @extend %content-box-text;
-            padding: 15px 10px;
-        }
+            @extend %footerfont;
 
-    }
-}
-
-/* ---------- FOOTER SECTION ---------- */
-
-footer {
-    @extend %flex-center;
-    height: 100px;
-
-    p {
-        @extend %footerfont;
-
-        @include desktop {
-            position: absolute;
-            left: 40px;
+            @include desktop {
+                position: absolute;
+                left: 40px;
+            }
         }
     }
-}
+
