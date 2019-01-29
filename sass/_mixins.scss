@@ -1,0 +1,40 @@
+$desktop-width: 1240px;
+
+@mixin desktop {
+	@media (min-width: $desktop-width) {
+		@content;
+	}
+}
+
+$tablet-width: 600px;
+
+@mixin tablet {
+	@media (min-width: $tablet-width) {
+		@content;
+	}
+}
+
+$mobile-width: 320px;
+
+@mixin mobile {
+	@media (min-width: $mobile-width) {
+		@content;
+	}
+}
+
+
+@mixin widthheight($width, $height) {
+	width: $width;
+	height: $height;
+}
+
+@mixin margintb($margin-top, $margin-bottom) {
+	margin-top: $margin-top;
+	margin-bottom: $margin-bottom;
+}
+
+
+// @mixin content-holder-params($height, $flex) {
+// 	height: $height;
+// 	flex: 0 1 100%; 
+// }

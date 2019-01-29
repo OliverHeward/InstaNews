@@ -1,0 +1,161 @@
+%background-color {
+    background-color: $base-bg; // Black background
+}
+
+%bodyfont {
+    font-family: $base-fontfamily;
+    font-size: $base-fontsize;
+    color: $base-fontcolor;
+}
+
+%flex-center {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
+
+%content-holder {
+    display: flex;
+
+    background: {
+        size: cover;
+        position: center;
+        repeat: no-repeat;
+    }
+}
+
+%content-box-text {
+    background-color: rgba(0, 0, 0, 0.4);
+    width: $width-full;
+    height: auto;
+    color: $base-fontcolor;
+    font-size: $base-fontsize;
+    align-self: flex-end;
+}
+
+%footerfont {
+    color: $footer-fontcolor;
+    font-family: $base-fontfamily;
+    font-size: $base-fontsize;
+}
+
+
+//     /* ---------- MAIN AREA ---------- */
+
+header {
+
+    @include desktop {
+        height: 150px;
+    }
+}
+
+
+.main-area {
+    @extend %flex-center;
+    @include margintb(40px, 40px);
+    flex-flow: column wrap;
+
+    @include tablet {
+        @include widthheight(100%, 100px);
+        flex-flow: row wrap;
+        align-content: flex-start;
+
+    }
+
+    .logo {
+        width: 200px;
+
+        @include tablet {
+            width: 150px;
+            position: absolute;
+            left: 15px;
+
+        }
+
+        @include desktop {
+            width: 100px;
+            position: absolute;
+            left: 15px;
+        }
+    }
+
+        .selection {
+            text-align: center;
+
+
+            @include desktop {
+                position: absolute;
+                left: 15%;
+            }
+
+            h1 {
+                @extend %bodyfont;
+                margin-top: 20px;
+                text-align: left;
+            }
+
+            select.dropdown {
+                background-color: #fff;
+                margin-top: 20px;
+                @include widthheight(200px, 30px);
+
+                :after {
+                    content: "\f063";
+                    font-family: FontAwesome;
+                }
+
+            }
+
+
+
+
+            
+        }
+}
+
+
+
+
+//     /* ---------- FLEXBOX NEWS REEL ---------- */
+
+.flexbox-news {
+    @extend %flex-center;
+    flex-flow: wrap row;
+
+    .holder {
+        @extend %content-holder;
+        @include widthheight(100%, 400px);
+
+        @include tablet {
+            @include widthheight(33.33%, 600px);
+        }
+
+        @include desktop {
+            @include widthheight(25%, 600px);
+        }
+
+
+        p {
+            @extend %content-box-text;
+            padding: 15px 10px;
+        }
+
+    }
+}
+
+/* ---------- FOOTER SECTION ---------- */
+
+footer {
+    @extend %flex-center;
+    height: 100px;
+
+    p {
+        @extend %footerfont;
+
+        @include desktop {
+            position: absolute;
+            left: 40px;
+        }
+    }
+}
