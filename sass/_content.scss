@@ -32,6 +32,7 @@
     color: $base-fontcolor;
     font-size: $base-fontsize;
     align-self: flex-end;
+    text-decoration: none;
 }
 
 %footerfont {
@@ -42,13 +43,6 @@
 
 
 //     /* ---------- MAIN AREA ---------- */
-
-header {
-
-    @include desktop {
-        height: 150px;
-    }
-}
 
 
 .main-area {
@@ -96,7 +90,7 @@ header {
             @include desktop {
                 text-align: left;
             }
-        
+
 
             label {
                 @extend %flex-center;
@@ -115,52 +109,59 @@ header {
                 @include widthheight(175px, 30px);
             }
         }
+    }
 }
-}
 
 
 
 
-     /* ---------- FLEXBOX NEWS REEL ---------- */
+/* ---------- FLEXBOX NEWS REEL ---------- */
 
-    .flexbox-news {
-        @extend %flex-center;
-        flex-flow: wrap row;
+.flexbox-news {
+    @extend %flex-center;
+    flex-flow: row wrap;
+
+    a {
+        @extend %content-holder;
+        @include widthheight(100%, 400px);
+        margin: 0;
+        text-decoration: none;
+        margin-top: auto;
+
+        @include tablet {
+            @include widthheight(33.33%, 600px);
+        }
+
+        @include desktop {
+            @include widthheight(25%, 600px);
+        }
 
         .holder {
-            @extend %content-holder;
-            @include widthheight(100%, 400px);
-
-            @include tablet {
-                @include widthheight(33.33%, 600px);
-            }
-
-            @include desktop {
-                @include widthheight(25%, 600px);
-            }
-
-
-            p {
-                @extend %content-box-text;
-                padding: 15px 10px;
-            }
-
+            display: flex;
         }
-    }
 
-    /* ---------- FOOTER SECTION ---------- */
-
-    footer {
-        @extend %flex-center;
-        height: 100px;
 
         p {
-            @extend %footerfont;
-
-            @include desktop {
-                position: absolute;
-                left: 40px;
-            }
+            display: flex;
+            @extend %content-box-text;
+            padding: 15px 10px;
+            align-self: flex-end;
         }
     }
+}
 
+/* ---------- FOOTER SECTION ---------- */
+
+footer {
+    @extend %flex-center;
+    height: 50px;
+
+    p {
+        @extend %footerfont;
+
+        @include desktop {
+            position: absolute;
+            left: 40px;
+        }
+    }
+}
