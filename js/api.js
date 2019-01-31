@@ -28,7 +28,7 @@
 //                     $.each(value.multimedia, function(k, v) {
 //                         if (v.format == 'superJumbo') {
 
-//                         
+                        
 //                             $('#content-holder-' + myIterater).css({ "background": "url(" + v.url + ") center", "background-size": "cover" });
 //                             //     console.log('hello i logged, ' + v.url);
 //                         }

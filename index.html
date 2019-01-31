@@ -1,55 +1,73 @@
 <!DOCTYPE html>
-<html>
+<!-- HTML opening tag with language set to "English" -->
+<html lang="en">
 
 <head>
-    <title>InstaNews - Your News Instant</title>
-    <!-- HTML 5 Set-type -->
+    <!-- Tab Bar Text -->
+    <title>InstaNews: Your News Instant</title>
+    <!-- HTML5 Set-type -->
     <meta charset="UTF-8">
+    <!-- Viewport set to adjust to device width, with an initial scale 1 that can be zoomed -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Meta data for Description and what content is on site - The Times New York -->
     <meta name="description" content="The Times New York">
+    <!-- Meta data for Author name set to Oliver Heward -->
     <meta name="author" content="Oliver Heward">
+    <!-- CSS reset stylesheet link -->
     <link rel="stylesheet" href="css/reset.css" type="text/css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <!-- CSS Style.min.css stylesheet link from SASS compile -->
     <link rel="stylesheet" href="css/style.min.css" type="text/css">
 </head>
+<!------ Header Container ------->
+<header>
+    <section class="container">
+        <div class="main-area">
+            <!-- Logo -->
+            <img class="logo" src="images/nyt-logo.svg" alt="Image of New York Times Logo">
+            <div class="selection">
+                <!-- Selection Headline --->
+                <h1>Choose a section:</h1>
+                <!-- Label -->
+                <label>
+                    <!-- Select Dropdown -->
+                    <select class="dropdown" id="news-select">
+                        <option>Selections</option>
+                        <option value="science">Science</option>
+                        <option value="arts">Arts</option>
+                        <option value="travel">Travel</option>
+                        <option value="sports">Sports</option>
+                        <option value="technology">Technology</option>
+                        <option value="fashion">Fashion</option>
+                        <option value="health">Health</option>
+                        <option value="magazine">Magazine</option>
+                        <option value="books">Books</option>
+                        <option value="world">World</option>
+                    </select>
+                </label>
+            </div>
+        </div>
+    </section>
+</header>
+<!------- Main Body Area -------->
 
 <body>
-    <header>
-        <section class="container">
-            <div class="main-area">
-                <img class="logo" src="images/nyt-logo.svg" alt="Image of New York Times Logo">
-                <div class="selection">
-                    <h1>Choose a section:</h1>
-                    <label>
-                        <select class="dropdown" id="news-select">
-                            <option>Selections</option>
-                            <option value="science">Science</option>
-                            <option value="arts">Arts</option>
-                            <option value="travel">Travel</option>
-                            <option value="sports">Sports</option>
-                            <option value="technology">Technology</option>
-                            <option value="fashion">Fashion</option>
-                            <option value="health">Health</option>
-                            <option value="magazine">Magazine</option>
-                            <option value="books">Books</option>
-                            <option value="world">World</option>
-                        </select>
-                    </label>
-                </div>
-            </div>
-        </section>
-    </header>
     <section class="container">
+        <!-- Flexbox News area container where elements and content is pushed into from jQuery -->
         <div class="flexbox-news">
+            <!-- Floating Error H1 that appends from jQuery .fail function -->
             <h1 id="error"></h1>
         </div>
     </section>
+    <!-- Footer Area -->
     <footer>
         <section>
             <p>&copy; Copyright 2016 INSTANEWS </p>
         </section>
     </footer>
+    <!-- jQuery external CDN -->
     <script src="http://code.jquery.com/jquery-3.3.1.js"></script>
+    <!-- jQuery.min script for API call -->
     <script src="js/apinew.min.js"></script>
 </body>
+
 </html>
