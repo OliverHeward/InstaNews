@@ -2,11 +2,13 @@
     background-color: $base-bg; // Black background
 }
 
+// Bodyfont Preset
 %bodyfont {
     font-family: $base-fontfamily;
     font-size: $base-fontsize;
     color: $base-fontcolor;
 }
+// Flexcenter Preset
 
 %flex-center {
     display: flex;
@@ -14,10 +16,10 @@
     align-content: center;
     justify-content: center;
 }
+// Content Holder Preset
 
 %content-holder {
     display: flex;
-
     background: {
         size: cover;
         position: center;
@@ -25,6 +27,7 @@
     }
 }
 
+// Content Box Text Preset 
 %content-box-text {
     background-color: rgba(0, 0, 0, 0.4);
     width: $width-full;
@@ -35,6 +38,7 @@
     text-decoration: none;
 }
 
+// Footer Font Preset 
 %footerfont {
     color: $footer-fontcolor;
     font-family: $base-fontfamily;
@@ -42,7 +46,7 @@
 }
 
 
-//     /* ---------- MAIN AREA ---------- */
+/* ---------- MAIN AREA ---------- */
 
 
 .main-area {
@@ -74,7 +78,7 @@
         }
     }
 
-
+/* ------- Selection Area -------- */
     .selection {
         text-align: center;
 
@@ -82,7 +86,7 @@
             position: absolute;
             left: 15%;
         }
-
+        // Header area
         h1 {
             @extend %bodyfont;
             @include margintb(20px, 20px);
@@ -91,7 +95,7 @@
                 text-align: left;
             }
 
-
+            // Label 
             label {
                 @extend %flex-center;
                 width: 200px;
@@ -102,7 +106,7 @@
 
                 }
             }
-
+            // Dropdown selection
             select.dropdown {
                 background-color: #fff;
                 margin-top: 20px;

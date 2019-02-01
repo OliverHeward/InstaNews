@@ -1,5 +1,5 @@
 $desktop-width: 1240px;
-
+// Desktop Mixin - 1240px
 @mixin desktop {
 	@media (min-width: $desktop-width) {
 		@content;
@@ -7,7 +7,7 @@ $desktop-width: 1240px;
 }
 
 $tablet-width: 600px;
-
+// Tablet Mixin - 600px
 @mixin tablet {
 	@media (min-width: $tablet-width) {
 		@content;
@@ -15,19 +15,19 @@ $tablet-width: 600px;
 }
 
 $mobile-width: 320px;
-
+// Mobile Mixin - 320px
 @mixin mobile {
 	@media (min-width: $mobile-width) {
 		@content;
 	}
 }
 
-
+// Mixin for a Width & Height shorthand
 @mixin widthheight($width, $height) {
 	width: $width;
 	height: $height;
 }
-
+// Mixin for Margin Top & Bottom shorthand
 @mixin margintb($margin-top, $margin-bottom) {
 	margin-top: $margin-top;
 	margin-bottom: $margin-bottom;
